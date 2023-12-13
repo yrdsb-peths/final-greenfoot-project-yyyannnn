@@ -13,6 +13,7 @@ public class MyWorld extends World
     BlueCircle blueCircle;
     RedCircle redCircle;
     YellowCircle yellowCircle;
+    Aim aim;
     
     
     /**
@@ -28,6 +29,9 @@ public class MyWorld extends World
         addObject(background,300,200);
         
         createTarget();
+        
+        aim = new Aim();
+        addObject(aim,getWidth()/2,210);
         
     }
     
