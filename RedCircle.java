@@ -8,6 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class RedCircle extends Actor
 {
+    public RedCircle()
+    {
+       GreenfootImage image = new GreenfootImage("images/red circle.png");
+       image.scale(20,20);
+       setImage(image); 
+    }
+    
     /**
      * Act - do whatever the RedCircle wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

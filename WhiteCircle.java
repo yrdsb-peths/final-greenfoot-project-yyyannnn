@@ -11,7 +11,7 @@ public class WhiteCircle extends Actor
     public WhiteCircle()
     {
        GreenfootImage image = new GreenfootImage("images/white circle.png");
-       image.scale(80,80);
+       image.scale(50,50);
        setImage(image); 
     }
     

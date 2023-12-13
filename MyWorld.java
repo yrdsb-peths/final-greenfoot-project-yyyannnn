@@ -8,7 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    WhiteCircle whiteCircle;
+    BlackCircle blackCircle;
+    BlueCircle blueCircle;
+    RedCircle redCircle;
+    YellowCircle yellowCircle;
+    
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -21,8 +27,25 @@ public class MyWorld extends World
         Background background = new Background();
         addObject(background,300,200);
         
-        Target target = new Target();
-        addObject(target,getWidth()/2,210);
+        createTarget();
         
+    }
+    
+    public void createTarget()
+    {
+        whiteCircle = new WhiteCircle();
+        addObject(whiteCircle,getWidth()/2,210);
+        
+        blackCircle = new BlackCircle();
+        addObject(blackCircle,getWidth()/2,210);
+        
+        blueCircle = new BlueCircle();
+        addObject(blueCircle,getWidth()/2,210);
+        
+        redCircle = new RedCircle();
+        addObject(redCircle,getWidth()/2,210);
+        
+        yellowCircle = new YellowCircle();
+        addObject(yellowCircle,getWidth()/2,210);
     }
 }
