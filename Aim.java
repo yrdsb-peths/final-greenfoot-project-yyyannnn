@@ -8,10 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Aim extends Actor
 {
-    GreenfootImage image;
-    MouseInfo mouse;
-    int x;
-    int y;
+    // MyWorld world = (MyWorld) getWorld();
+    private GreenfootImage image;
+    private MouseInfo mouse;
+    public int x;
+    public int y;
+    public int bodyMovement = 5;
+    
     
     public Aim()
     {
@@ -27,14 +30,29 @@ public class Aim extends Actor
     public void act()
     {
         mouse = Greenfoot.getMouseInfo();
-        
+
         if (mouse != null)
         {
-          x = mouse.getX();
-          y = mouse.getY();
+          if (Greenfoot.mouseClicked(null)){
+              return;
+          }
+            
+          x = mouse.getX() + Greenfoot.getRandomNumber(bodyMovement);
+          y = mouse.getY() + + Greenfoot.getRandomNumber(bodyMovement);
           setLocation(x,y);  
+          
         }
-        
-        
+ 
     }
+    
+    public int getX()
+    {
+        return x;
+    }
+    
+    public int getY()
+    {
+        return y;
+    }
+        
 }

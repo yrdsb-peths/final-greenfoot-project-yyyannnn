@@ -8,10 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class RedCircle extends Actor
 {
-    public RedCircle()
+    public RedCircle(int size)
     {
        GreenfootImage image = new GreenfootImage("images/red circle.png");
-       image.scale(20,20);
+       image.scale(size,size);
        setImage(image); 
     }
     

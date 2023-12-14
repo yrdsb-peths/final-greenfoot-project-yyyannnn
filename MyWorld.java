@@ -15,6 +15,9 @@ public class MyWorld extends World
     YellowCircle yellowCircle;
     Aim aim;
     
+    public int windVer = Greenfoot.getRandomNumber(10);
+    public int windHor = Greenfoot.getRandomNumber(10);
+    
     
     /**
      * Constructor for objects of class MyWorld.
@@ -35,21 +38,34 @@ public class MyWorld extends World
         
     }
     
+    public void act(){
+        if (Greenfoot.mouseClicked(null)){
+            
+            int x = aim.getX() + windHor;
+            int y = aim.getY() + windVer;
+            System.out.println(x + ", " + y);
+            // Color color = getColorAt(x, y);
+        }
+    }
+    
     public void createTarget()
     {
-        whiteCircle = new WhiteCircle();
-        addObject(whiteCircle,getWidth()/2,210);
+        int x = getWidth()/2;
+        int y = 210;
         
-        blackCircle = new BlackCircle();
-        addObject(blackCircle,getWidth()/2,210);
+        whiteCircle = new WhiteCircle(50);
+        addObject(whiteCircle,x,y);
         
-        blueCircle = new BlueCircle();
-        addObject(blueCircle,getWidth()/2,210);
+        blackCircle = new BlackCircle(40);
+        addObject(blackCircle,x,y);
         
-        redCircle = new RedCircle();
-        addObject(redCircle,getWidth()/2,210);
+        blueCircle = new BlueCircle(30);
+        addObject(blueCircle,x,y);
         
-        yellowCircle = new YellowCircle();
-        addObject(yellowCircle,getWidth()/2,210);
+        redCircle = new RedCircle(20);
+        addObject(redCircle,x,y);
+        
+        yellowCircle = new YellowCircle(10);
+        addObject(yellowCircle,x,y);
     }
 }
