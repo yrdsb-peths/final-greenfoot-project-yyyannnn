@@ -29,20 +29,30 @@ public class Aim extends Actor
      */
     public void act()
     {
-        mouse = Greenfoot.getMouseInfo();
-
-        if (mouse != null)
-        {
-          if (Greenfoot.mouseClicked(null)){
+        
+          if (Greenfoot.mouseClicked(null))
+          {
               return;
           }
-            
+          else
+          {
+              checkMouse();
+          }
+          
+         
+    }
+ 
+    
+    public void checkMouse(){
+        mouse = Greenfoot.getMouseInfo();
+        
+        if (mouse != null)
+        {
           x = mouse.getX() + Greenfoot.getRandomNumber(bodyMovement);
           y = mouse.getY() + + Greenfoot.getRandomNumber(bodyMovement);
           setLocation(x,y);  
-          
         }
- 
+        
     }
     
     public int getX()

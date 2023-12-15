@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class YellowCircle extends Actor
 {
+    MyWorld world = (MyWorld) getWorld();
+    
     public YellowCircle(int size)
     {
        GreenfootImage image = new GreenfootImage("images/yellow circle.png");
@@ -21,6 +23,8 @@ public class YellowCircle extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        // if(Greenfoot.mouseClicked(this)){
+            // world.addScore(10);
+        // }
     }
 }

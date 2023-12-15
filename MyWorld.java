@@ -14,9 +14,13 @@ public class MyWorld extends World
     RedCircle redCircle;
     YellowCircle yellowCircle;
     Aim aim;
+    Label scoreLabel;
+    
+    MouseInfo mouse = Greenfoot.getMouseInfo();
     
     public int windVer = Greenfoot.getRandomNumber(10);
     public int windHor = Greenfoot.getRandomNumber(10);
+    public int score = 0;
     
     
     /**
@@ -36,16 +40,19 @@ public class MyWorld extends World
         aim = new Aim();
         addObject(aim,getWidth()/2,210);
         
+        scoreLabel = new Label("Score: " + score, 50);
+        addObject(scoreLabel,100,100);
+        
     }
     
+    
     public void act(){
-        if (Greenfoot.mouseClicked(null)){
-            
-            int x = aim.getX() + windHor;
-            int y = aim.getY() + windVer;
-            System.out.println(x + ", " + y);
-            // Color color = getColorAt(x, y);
-        }
+        
+    }
+    
+    public void addScore(int s){
+        score += s;
+        scoreLabel.setValue("Score: " + score);
     }
     
     public void createTarget()
