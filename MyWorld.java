@@ -51,8 +51,12 @@ public class MyWorld extends World
         if(Greenfoot.mouseClicked(null))
         {
         
-            BlackCircle spot = new BlackCircle(5);
-            addObject(spot,mouse.getX(),mouse.getY());
+            if(mouse != null)
+            {
+                System.out.println("hi");
+                BlackCircle spot = new BlackCircle(10);
+                addObject(spot,mouse.getX(),mouse.getY());
+            }
             
             if(Greenfoot.mouseClicked(yellowCircle)){
                 addScore(40);
