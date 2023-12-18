@@ -16,7 +16,6 @@ public class MyWorld extends World
     Aim aim;
     Label scoreLabel;
     
-    MouseInfo mouse = Greenfoot.getMouseInfo();
     
     public int windVer = Greenfoot.getRandomNumber(10);
     public int windHor = Greenfoot.getRandomNumber(10);
@@ -47,36 +46,35 @@ public class MyWorld extends World
     }
     
     
-    public void act(){
-        if(Greenfoot.mouseClicked(null))
-        {
+    public void act()
+    {
         
-            if(mouse != null)
-            {
-                System.out.println("hi");
-                BlackCircle spot = new BlackCircle(10);
-                addObject(spot,mouse.getX(),mouse.getY());
-            }
-            
-            if(Greenfoot.mouseClicked(yellowCircle)){
-                addScore(40);
-            }
-            
-            if(Greenfoot.mouseClicked(redCircle)){
-                addScore(30);
-            }
-            
-            if(Greenfoot.mouseClicked(blueCircle)){
-                addScore(20);
-            }
-            
-            if(Greenfoot.mouseClicked(blackCircle)){
-                addScore(10);
-            }
-            
-            if(Greenfoot.mouseClicked(whiteCircle)){
-                addScore(5);
-            }
+        if(Greenfoot.mouseClicked(yellowCircle)){
+            addScore(40);
+        }
+        
+        if(Greenfoot.mouseClicked(redCircle)){
+            addScore(30);
+        }
+        
+        if(Greenfoot.mouseClicked(blueCircle)){
+            addScore(20);
+        }
+        
+        if(Greenfoot.mouseClicked(blackCircle)){
+            addScore(10);
+        }
+        
+        if(Greenfoot.mouseClicked(whiteCircle)){
+            addScore(5);
+        }
+        
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        
+        if(Greenfoot.mouseClicked(null) && mouse != null)
+        {
+            BlackCircle spot = new BlackCircle(5);
+            addObject(spot,mouse.getX(),mouse.getY());
         }
 
     }
