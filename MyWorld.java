@@ -48,24 +48,31 @@ public class MyWorld extends World
     
     
     public void act(){
-        if(Greenfoot.mouseClicked(yellowCircle)){
-            addScore(40);
-        }
+        if(Greenfoot.mouseClicked(null))
+        {
         
-        if(Greenfoot.mouseClicked(redCircle)){
-            addScore(30);
-        }
-        
-        if(Greenfoot.mouseClicked(blueCircle)){
-            addScore(20);
-        }
-        
-        if(Greenfoot.mouseClicked(blackCircle)){
-            addScore(10);
-        }
-        
-        if(Greenfoot.mouseClicked(whiteCircle)){
-            addScore(5);
+            BlackCircle spot = new BlackCircle(5);
+            addObject(spot,mouse.getX(),mouse.getY());
+            
+            if(Greenfoot.mouseClicked(yellowCircle)){
+                addScore(40);
+            }
+            
+            if(Greenfoot.mouseClicked(redCircle)){
+                addScore(30);
+            }
+            
+            if(Greenfoot.mouseClicked(blueCircle)){
+                addScore(20);
+            }
+            
+            if(Greenfoot.mouseClicked(blackCircle)){
+                addScore(10);
+            }
+            
+            if(Greenfoot.mouseClicked(whiteCircle)){
+                addScore(5);
+            }
         }
 
     }
