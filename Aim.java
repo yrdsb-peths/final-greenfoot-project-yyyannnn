@@ -11,8 +11,8 @@ public class Aim extends Actor
     // MyWorld world = (MyWorld) getWorld();
     private GreenfootImage image;
     private MouseInfo mouse;
-    public int x;
-    public int y;
+    public static int x;
+    public static int y;
     public int bodyMovement = 5;
     
     
@@ -55,12 +55,12 @@ public class Aim extends Actor
         
     }
     
-    public int getX()
+    public static int getXPix()
     {
         return x;
     }
     
-    public int getY()
+    public static int getYPix()
     {
         return y;
     }

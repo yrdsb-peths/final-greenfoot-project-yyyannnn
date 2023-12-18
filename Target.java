@@ -8,10 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Target extends Actor
 {
-    public Target(){
-        GreenfootImage image = new GreenfootImage("images/target.png");
-        image.scale(50,50);
-        setImage(image);
+    GreenfootImage image;
+    
+    public Target()
+    {
+       image = new GreenfootImage("images/target.png");
+       image.scale(300,300);
+       setImage(image); 
     }
     
     /**

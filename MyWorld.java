@@ -35,6 +35,7 @@ public class MyWorld extends World
         Background background = new Background();
         addObject(background,300,200);
         
+        //createTarget();
         createTarget();
         
         aim = new Aim();
@@ -47,7 +48,26 @@ public class MyWorld extends World
     
     
     public void act(){
+        if(Greenfoot.mouseClicked(yellowCircle)){
+            addScore(40);
+        }
         
+        if(Greenfoot.mouseClicked(redCircle)){
+            addScore(30);
+        }
+        
+        if(Greenfoot.mouseClicked(blueCircle)){
+            addScore(20);
+        }
+        
+        if(Greenfoot.mouseClicked(blackCircle)){
+            addScore(10);
+        }
+        
+        if(Greenfoot.mouseClicked(whiteCircle)){
+            addScore(5);
+        }
+
     }
     
     public void addScore(int s){
