@@ -30,18 +30,29 @@ public class Aim extends Actor
     public void act()
     {
         
-          if (Greenfoot.mouseClicked(null))
-          {
-              return;
-          }
-          else
-          {
-              checkMouse();
-          }
+        if (Greenfoot.mouseClicked(null))
+        {
+          return;
+        }
+        else
+        {
+           checkMouse();
+        }
           
-         
+        if(Greenfoot.mouseClicked(RedCan.class))
+        {
+          shoot();
+        }
     }
- 
+    
+    public void shoot()
+    {
+        System.out.println("hi");
+        removeTouching(RedCan.class);
+        GameWorld world = (GameWorld) getWorld();
+        world.createRedcan();
+        world.increaseScore();
+    }
     
     public void checkMouse(){
         mouse = Greenfoot.getMouseInfo();
