@@ -49,6 +49,36 @@ public class MyWorld extends World
     public void act()
     {
         
+        checkArrow();
+        checkKeys();
+        
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        
+        if(Greenfoot.mouseClicked(null) && mouse != null)
+        {
+            BlackCircle spot = new BlackCircle(2);
+            addObject(spot,mouse.getX(),mouse.getY());
+        }
+
+    }
+    
+    public void checkKeys()
+    {
+        if(Greenfoot.isKeyDown("shift"))
+        {
+            whiteCircle.setScale(350);
+            blackCircle.setScale(300);
+            blueCircle.setScale(250);
+            redCircle.setScale(200);
+            yellowCircle.setScale(100);
+        }
+    }
+    
+    /**
+     * Will add score when clicked on circles
+     */
+    public void checkArrow()
+    {
         if(Greenfoot.mouseClicked(yellowCircle)){
             addScore(40);
         }
@@ -68,22 +98,21 @@ public class MyWorld extends World
         if(Greenfoot.mouseClicked(whiteCircle)){
             addScore(5);
         }
-        
-        MouseInfo mouse = Greenfoot.getMouseInfo();
-        
-        if(Greenfoot.mouseClicked(null) && mouse != null)
-        {
-            BlackCircle spot = new BlackCircle(5);
-            addObject(spot,mouse.getX(),mouse.getY());
-        }
-
     }
     
-    public void addScore(int s){
+    /**
+     * Method to add score and changes scoreLabel
+     */
+    public void addScore(int s)
+    {
         score += s;
         scoreLabel.setValue("Score: " + score);
     }
     
+    
+    /**
+     * Creates the target
+     */
     public void createTarget()
     {
         int x = getWidth()/2;

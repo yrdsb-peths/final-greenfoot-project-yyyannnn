@@ -25,4 +25,9 @@ public class YellowCircle extends Actor
     public void act()
     {
     }
+    
+    public void setScale(int num)
+    {
+        image.scale(num,num);
+    }
 }

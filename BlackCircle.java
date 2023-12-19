@@ -8,9 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BlackCircle extends Actor
 {
+    GreenfootImage image;
+    
     public BlackCircle(int size)
     {
-       GreenfootImage image = new GreenfootImage("images/black circle.png");
+       image = new GreenfootImage("images/black circle.png");
        image.scale(size,size);
        setImage(image); 
     }
@@ -22,5 +24,10 @@ public class BlackCircle extends Actor
     public void act()
     {
         // Add your action code here.
+    }
+    
+    public void setScale(int num)
+    {
+        image.scale(num,num);
     }
 }
