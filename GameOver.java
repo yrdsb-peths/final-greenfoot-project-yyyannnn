@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ResultWorld extends World
+public class GameOver extends World
 {
     WhiteCircle whiteCircle;
     BlackCircle blackCircle;
@@ -18,7 +18,7 @@ public class ResultWorld extends World
      * Constructor for objects of class ResultWorld.
      * 
      */
-    public ResultWorld()
+    public GameOver()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 

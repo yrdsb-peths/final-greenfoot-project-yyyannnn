@@ -14,13 +14,15 @@ public class Aim extends Actor
     public static int x;
     public static int y;
     public int bodyMovement = 5;
+    private boolean isGame;
     
     
-    public Aim()
+    public Aim(boolean game)
     {
        image = new GreenfootImage("images/aim.png");
        image.scale(5,5);
        setImage(image); 
+       isGame = game;
     }
     
     /**
@@ -29,7 +31,7 @@ public class Aim extends Actor
      */
     public void act()
     {
-        
+   
         if (Greenfoot.mouseClicked(null))
         {
           return;
@@ -38,21 +40,10 @@ public class Aim extends Actor
         {
            checkMouse();
         }
-          
-        if(Greenfoot.mouseClicked(RedCan.class))
-        {
-          shoot();
-        }
+    
     }
     
-    public void shoot()
-    {
-        System.out.println("hi");
-        removeTouching(RedCan.class);
-        GameWorld world = (GameWorld) getWorld();
-        world.createRedcan();
-        world.increaseScore();
-    }
+ 
     
     public void checkMouse(){
         mouse = Greenfoot.getMouseInfo();

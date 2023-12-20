@@ -9,14 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class RedCan extends Actor
 {
     public int speed = 1;
+    GreenfootImage image;
     
     /**
      * Contructor
      */
     public RedCan(){
-        GreenfootImage image = new GreenfootImage("images/red_can.png");
+        image = new GreenfootImage("images/red_can.png");
         image.scale(40,70);
         setImage(image);
+        speed = 1;
     }
         
     /**
@@ -29,13 +31,26 @@ public class RedCan extends Actor
         int y = getY() + speed;
         setLocation(x,y);
         
-        // Game over when it gets to bottom
         GameWorld world = (GameWorld) getWorld();
+        
+        if(Greenfoot.mouseClicked(this))
+        {
+            speed = 10;
+            world.createRedcan();
+            world.increaseScore();
+        }
+
+        // Remove oject when it gets to bottom
         if(getY() >= world.getHeight())
         {
-            //world.gameOver();
+            if(speed == 1)
+            {
+                world.gameOver();
+            }
+            
             world.removeObject(this);
         }
+        
     }
     
     /**

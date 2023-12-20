@@ -37,7 +37,7 @@ public class MyWorld extends World
         //createTarget();
         createTarget();
         
-        aim = new Aim();
+        aim = new Aim(false);
         addObject(aim,getWidth()/2,210);
         
         scoreLabel = new Label("Score: " + score, 50);

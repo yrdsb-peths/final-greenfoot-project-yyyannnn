@@ -31,7 +31,10 @@ public class GameWorld extends World
      */
     public void create()
     {
-        aim = new Aim();
+        Background background = new Background();
+        addObject(background,300,200);
+        
+        aim = new Aim(true);
         addObject(aim,getWidth()/2,210);
         
         // Create a labal
@@ -53,12 +56,11 @@ public class GameWorld extends World
     /**
      * Go to game over world
      */    
-    // public void gameOver()
-    // {
-        // Greenfoot.delay(5);
-        // World world = new GameOver();
-        // Greenfoot.setWorld(world);
-    // }
+    public void gameOver()
+    {
+        World world = new GameOver();
+        Greenfoot.setWorld(world);
+    }
     
     /**
      * Increases score and level
@@ -82,7 +84,7 @@ public class GameWorld extends World
     }
     
     /**
-     * Create fish anywhere at the top of the screen
+     * Create can anywhere at the top of the screen
      */
     public void createRedcan(){
         RedCan redCan = new RedCan();
