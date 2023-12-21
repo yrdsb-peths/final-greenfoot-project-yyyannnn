@@ -10,6 +10,7 @@ public class RedCan extends Actor
 {
     public int speed = 1;
     GreenfootImage image;
+    boolean isHit = false;
     
     /**
      * Contructor
@@ -18,7 +19,7 @@ public class RedCan extends Actor
         image = new GreenfootImage("images/red_can.png");
         image.scale(40,70);
         setImage(image);
-        speed = 1;
+        isHit = false;
     }
         
     /**
@@ -36,6 +37,7 @@ public class RedCan extends Actor
         if(Greenfoot.mouseClicked(this))
         {
             speed = 10;
+            isHit = true;
             world.createRedcan();
             world.increaseScore();
         }
@@ -43,7 +45,7 @@ public class RedCan extends Actor
         // Remove oject when it gets to bottom
         if(getY() >= world.getHeight())
         {
-            if(speed == 1)
+            if(!isHit)
             {
                 world.gameOver();
             }

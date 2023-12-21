@@ -30,8 +30,19 @@ public class GameOver extends World
         
         Target target = new Target();
         addObject(target,516,272);
+        
+        Label label = new Label("Press space to restart", 30);
+        addObject(label,124,233);
     }
-    
+
+    public void act()
+    {
+        if(Greenfoot.isKeyDown("space"))
+        {
+            TitleScreen homeScreen = new TitleScreen();
+            Greenfoot.setWorld(homeScreen);
+        }
+    }
     
     public void createTarget()
     {

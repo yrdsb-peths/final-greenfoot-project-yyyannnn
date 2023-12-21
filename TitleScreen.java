@@ -7,8 +7,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleScreen extends World
 {
 
-    Label titleLabel = new Label("Archery",60);
+    Label titleLabel = new Label("Shooting Game",60);
     Label author = new Label("By Yan", 25);
+    Arrow arrow = new Arrow();
     
     /**
      * Constructor for objects of class TitleScreen.
@@ -34,18 +35,25 @@ public class TitleScreen extends World
      */
     public void act()
     {
-        // Start the game if user presses the space bar
+        // Go to practice if user presses the space bar
         if (Greenfoot.isKeyDown("space"))
         {
             MyWorld practice = new MyWorld();
             Greenfoot.setWorld(practice);
         }
         
+        //Play game if user presses enter
         if(Greenfoot.isKeyDown("enter"))
         {
             GameWorld gameWorld = new GameWorld();
             Greenfoot.setWorld(gameWorld);
         }
+        
+        if(Greenfoot.mouseClicked(null))
+        {
+            addObject(arrow,124,247);
+        }
+        
     }
     
     /**
@@ -59,12 +67,15 @@ public class TitleScreen extends World
         addObject(target,516,272);
         
         Label label = new Label("Move mouse to aim", 30);
-        addObject(label,177,293);
+        addObject(label,124,233);
 
-        Label label2 = new Label("Press 'space' to start game", 30);
-        addObject(label2,getWidth()/2,328);
+        Label label2 = new Label("'space' to practice", 30);
+        addObject(label2,114,353);
 
         Label label3 = new Label("Click to shoot", 30);
-        addObject(label3,421,291);
+        addObject(label3,124,264);
+        
+        Label label4 = new Label("'enter' to play game", 30);
+        addObject(label4,119,380);
     }
 }
