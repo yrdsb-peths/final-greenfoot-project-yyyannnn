@@ -72,6 +72,8 @@ public class MyWorld extends World
             redCircle.setScale(200);
             yellowCircle.setScale(100);
         }
+        
+        
     }
     
     /**

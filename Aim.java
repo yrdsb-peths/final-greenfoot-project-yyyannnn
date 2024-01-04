@@ -16,6 +16,7 @@ public class Aim extends Actor
     public int bodyMovement = 5;
     private boolean isGame;
     
+    static GreenfootSound whooshSound = new GreenfootSound("whoosh.mp3");
     
     public Aim(boolean game)
     {
@@ -34,7 +35,8 @@ public class Aim extends Actor
    
         if (Greenfoot.mouseClicked(null))
         {
-          return;
+            whooshSound.play();
+            return;
         }
         else
         {

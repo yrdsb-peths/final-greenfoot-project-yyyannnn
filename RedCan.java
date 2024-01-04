@@ -11,6 +11,7 @@ public class RedCan extends Actor
     public int speed = 1;
     GreenfootImage image;
     boolean isHit = false;
+    static GreenfootSound hitSound = new GreenfootSound("ting.wav");
     
     /**
      * Contructor
@@ -36,6 +37,7 @@ public class RedCan extends Actor
         
         if(Greenfoot.mouseClicked(this))
         {
+            hitSound.play();
             speed = 10;
             isHit = true;
             world.createRedcan();
