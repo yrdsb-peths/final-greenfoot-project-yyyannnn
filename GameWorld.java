@@ -13,7 +13,7 @@ public class GameWorld extends World
     Label scoreLabel;
     Label levelLabel;
     int level = 1;
-    //int numEggs = 0;
+    int starX = 600;
     
     /**
      * Constructor for objects of class GameWorld.
@@ -74,12 +74,10 @@ public class GameWorld extends World
         {
             level++;
             levelLabel.setValue("Level: " + level);
-            //numEggs++;
             
-            // for(int i = 0; i < numEggs; i++)
-            // {
-                // createEgg();
-            // }
+            starX -= 50;
+            Star star = new Star();
+            addObject(star,starX,30);
         }
     }
     
@@ -93,16 +91,6 @@ public class GameWorld extends World
         int y = 0;
         addObject(redCan,x,y);
     }
-    
-    /**
-     * Create egg anywhere at the top of the screen
-     */
-    // public void createEgg(){
-        // Egg egg = new Egg();
-        // int x = Greenfoot.getRandomNumber(600);
-        // int y = 0;
-        // addObject(egg,x,y);
-    // }
     
     // /**
      // * Create the sound button
