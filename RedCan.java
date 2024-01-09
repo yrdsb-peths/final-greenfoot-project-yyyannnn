@@ -34,20 +34,25 @@ public class RedCan extends Actor
         setLocation(x,y);
         
         GameWorld world = (GameWorld) getWorld();
+        boolean isStopped = world.getPaused();
         
         if(Greenfoot.mouseClicked(this))
         {
             hitSound.play();
             speed = 10;
             isHit = true;
-            world.createRedcan();
+            
+            if(!isStopped)
+            {
+                world.createRedcan();
+            }
             world.increaseScore();
         }
 
         // Remove oject when it gets to bottom
         if(getY() >= world.getHeight())
         {
-            if(!isHit)
+            if(!isHit && !isStopped)
             {
                 world.gameOver();
             }

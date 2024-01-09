@@ -22,7 +22,7 @@ public class Star extends Actor
         
         animationTimer.mark();
         
-        // Initial penguin
+        // Initial star
         setImage(fillUp[0]);
         
         starSound.play();
