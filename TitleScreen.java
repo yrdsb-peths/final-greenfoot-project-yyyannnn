@@ -8,7 +8,6 @@ public class TitleScreen extends World
 {
 
     Label titleLabel = new Label("Shooting Game",60);
-    Label author = new Label("By Yan", 25);
     Arrow arrow = new Arrow();
     
     /**
@@ -24,7 +23,6 @@ public class TitleScreen extends World
         addObject(background,300,200);
         
         addObject(titleLabel, getWidth()/2, 92);
-        addObject(author,getWidth()/2,130);
         
         prepare();
         
@@ -77,5 +75,8 @@ public class TitleScreen extends World
         
         Label label4 = new Label("'enter' to play game", 30);
         addObject(label4,119,380);
+        
+        SoundButton soundButton = new SoundButton();
+        addObject(soundButton,570,35);
     }
 }

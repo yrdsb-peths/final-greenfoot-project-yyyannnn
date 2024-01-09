@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Star extends Actor
 {
-    //static GreenfootSound penguinSound = new GreenfootSound("penguinSound.mp3");
+    static GreenfootSound starSound = new GreenfootSound("star.mp3");
     GreenfootImage[] fillUp = new GreenfootImage[6];
     SimpleTimer animationTimer = new SimpleTimer();
     
@@ -24,6 +24,8 @@ public class Star extends Actor
         
         // Initial penguin
         setImage(fillUp[0]);
+        
+        starSound.play();
     }
     
     /**
@@ -46,7 +48,6 @@ public class Star extends Actor
             imageIndex = (imageIndex + 1) % fillUp.length;
         }
         
-        
     }
     
     /**
@@ -58,10 +59,10 @@ public class Star extends Actor
     }
     
     
-    // /**
-     // * A static method that will set the volume of sound
-     // */
-    // public static void setVolume(int volume){
-        // penguinSound.setVolume(volume);
-    // }
+    /**
+     * A static method that will set the volume of sound
+     */
+    public static void setVolume(int volume){
+        starSound.setVolume(volume);
+    }
 }

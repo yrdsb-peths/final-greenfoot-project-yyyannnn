@@ -68,5 +68,11 @@ public class Aim extends Actor
     {
         return y;
     }
-        
+    
+    /**
+     * A static method that will set the volume of sound
+     */
+    public static void setVolume(int volume){
+        whooshSound.setVolume(volume);
+    }
 }

@@ -63,4 +63,11 @@ public class RedCan extends Actor
     public void setSpeed(int spd){
         speed = spd;
     }
+    
+    /**
+     * A static method that will set the volume of sound
+     */
+    public static void setVolume(int volume){
+        hitSound.setVolume(volume);
+    }
 }

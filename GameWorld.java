@@ -13,7 +13,7 @@ public class GameWorld extends World
     Label scoreLabel;
     Label levelLabel;
     int level = 1;
-    int starX = 600;
+    int starX = 560;
     
     /**
      * Constructor for objects of class GameWorld.
@@ -44,8 +44,11 @@ public class GameWorld extends World
         levelLabel = new Label("Level: " + level,50);
         addObject(levelLabel,90,77);
         
+        GoBack back = new GoBack(2);
+        addObject(back,31,371);
+        
         createRedcan();
-        //createSound();
+        createSound();
     }
     
     public void act()
@@ -58,7 +61,7 @@ public class GameWorld extends World
      */    
     public void gameOver()
     {
-        World world = new GameOver();
+        World world = new GameOver(score);
         Greenfoot.setWorld(world);
     }
     
@@ -92,11 +95,20 @@ public class GameWorld extends World
         addObject(redCan,x,y);
     }
     
-    // /**
-     // * Create the sound button
-     // */
-    // public void createSound(){
-        // SoundButton soundButton = new SoundButton();
-        // addObject(soundButton,570,35);
-    // }
+    /**
+     * Create the sound button
+     */
+    public void createSound(){
+        SoundButton soundButton = new SoundButton();
+        addObject(soundButton,570,35);
+    }
+    
+    /**
+     * Set to titleScreen 
+     */
+    public void returnScreen()
+    {
+        TitleScreen homeScreen = new TitleScreen();
+        Greenfoot.setWorld(homeScreen);
+    }
 }

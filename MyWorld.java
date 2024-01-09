@@ -34,7 +34,7 @@ public class MyWorld extends World
         Background background = new Background();
         addObject(background,300,200);
         
-        //createTarget();
+        //create the target
         createTarget();
         
         aim = new Aim(false);
@@ -43,6 +43,14 @@ public class MyWorld extends World
         scoreLabel = new Label("Score: " + score, 50);
         addObject(scoreLabel,100,100);
         
+        Bow bow = new Bow();
+        addObject(bow,386,186);
+        
+        SoundButton soundButton = new SoundButton();
+        addObject(soundButton,570,35);
+        
+        GoBack back = new GoBack(1);
+        addObject(back,31,371);
     }
     
     
@@ -50,7 +58,6 @@ public class MyWorld extends World
     {
         
         checkArrow();
-        checkKeys();
         
         MouseInfo mouse = Greenfoot.getMouseInfo();
         
@@ -60,20 +67,6 @@ public class MyWorld extends World
             addObject(spot,mouse.getX(),mouse.getY());
         }
 
-    }
-    
-    public void checkKeys()
-    {
-        if(Greenfoot.isKeyDown("shift"))
-        {
-            whiteCircle.setScale(350);
-            blackCircle.setScale(300);
-            blueCircle.setScale(250);
-            redCircle.setScale(200);
-            yellowCircle.setScale(100);
-        }
-        
-        
     }
     
     /**
@@ -134,5 +127,14 @@ public class MyWorld extends World
         
         yellowCircle = new YellowCircle(10);
         addObject(yellowCircle,x,y);
+    }
+    
+    /**
+     * Set to titleScreen 
+     */
+    public void returnScreen()
+    {
+        TitleScreen homeScreen = new TitleScreen();
+        Greenfoot.setWorld(homeScreen);
     }
 }
