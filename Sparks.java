@@ -34,7 +34,7 @@ public class Sparks extends Actor
     int imageIndex = 0;
     public void animateSparks()
     {
-        if(animationTimer.millisElapsed() < 90)
+        if(animationTimer.millisElapsed() < 500)
         {
            return; 
         }
@@ -42,6 +42,14 @@ public class Sparks extends Actor
         
         if(imageIndex == 4){
             setImage(sparks[imageIndex]);
+            
+            GameWorld world = (GameWorld) getWorld();
+            world.removeObject(this);
+            
+            Greenfoot.delay(120);
+            
+            world.setPaused(false);
+            world.createRedcan();
         }
         else{
             setImage(sparks[imageIndex]);

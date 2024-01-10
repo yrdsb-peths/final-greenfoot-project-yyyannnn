@@ -83,26 +83,18 @@ public class GameWorld extends World
             Star star = new Star();
             addObject(star,starX,30);
         
-            if(level % 4 == 0)
+            if(score % 15 == 0)
             {
                 isPaused = true;
-                Greenfoot.delay(120);
                 
                 Chest chest = new Chest();
                 addObject(chest,467,279);
                 
                 Sparks spark = new Sparks();
-                addObject(spark,getWidth()/2,getHeight()/2);
+                addObject(spark,300,200);
                 
-                Greenfoot.setSpeed(20);
-                Greenfoot.delay(120);
-                removeObject(chest);
-                removeObject(spark);
-                isPaused = false;
             }
         }
-        
-        
     }
     
     /**
@@ -119,6 +111,11 @@ public class GameWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(redCan,x,y);
+    }
+    
+    public void setPaused(boolean bool)
+    {
+        isPaused = bool;
     }
     
     public boolean getPaused(){
@@ -141,4 +138,5 @@ public class GameWorld extends World
         TitleScreen homeScreen = new TitleScreen();
         Greenfoot.setWorld(homeScreen);
     }
+
 }

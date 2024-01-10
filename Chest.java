@@ -34,7 +34,7 @@ public class Chest extends Actor
     int imageIndex = 0;
     public void animateChest()
     {
-        if(animationTimer.millisElapsed() < 110)
+        if(animationTimer.millisElapsed() < 300)
         {
            return; 
         }
@@ -42,6 +42,9 @@ public class Chest extends Actor
         
         if(imageIndex == 8){
             setImage(chest[imageIndex]);
+            
+            GameWorld world = (GameWorld) getWorld();
+            world.removeObject(this);
         }
         else{
             setImage(chest[imageIndex]);
