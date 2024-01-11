@@ -55,14 +55,21 @@ public class GameWorld extends World
     
     public void act()
     {
-       if(shootAnimation == 1)
+       if(Greenfoot.mouseClicked(null))
        {
-           if(Greenfoot.mouseClicked(null))
+           if(shootAnimation == 1)
            {
-              Sparks spark = new Sparks(50);
+              RedSparks spark = new RedSparks(50);
               addObject(spark,Aim.getXPix(),Aim.getYPix()); 
            }
+           else if (shootAnimation == 2)
+           {
+               BlueSparks spark = new BlueSparks(250);
+               addObject(spark,300,200);
+           }
        }
+       
+       
     }
     
     /**
@@ -102,7 +109,12 @@ public class GameWorld extends World
                 
                 if(shootAnimation == 1)
                 {
-                    Sparks spark = new Sparks(500);
+                    RedSparks spark = new RedSparks(500);
+                    addObject(spark,300,200);
+                }
+                else if (shootAnimation == 2)
+                {
+                    BlueSparks spark = new BlueSparks(250);
                     addObject(spark,300,200);
                 }
             }

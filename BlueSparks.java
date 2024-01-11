@@ -3,22 +3,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * 
  */
-public class Sparks extends Actor
+public class BlueSparks extends Actor
 {
     //static GreenfootSound starSound = new GreenfootSound("star.mp3");
-    GreenfootImage[] sparks = new GreenfootImage[5];
+    GreenfootImage[] sparks = new GreenfootImage[9];
     SimpleTimer animationTimer = new SimpleTimer();
     int speed;
     
     /**
      * Constructor 
      */
-    public Sparks(int speed)
+    public BlueSparks(int speed)
     {
         for (int i = 0; i < sparks.length; i++)
         {
-            sparks[i] =  new GreenfootImage("images/Sparks/spark" + i + ".png");
-            sparks[i].scale(150,150);
+            sparks[i] =  new GreenfootImage("images/blue_spark/Bspark" + i + ".png");
+            sparks[i].scale(125,125);
         }
         
         this.speed = speed;
