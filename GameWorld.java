@@ -15,6 +15,7 @@ public class GameWorld extends World
     int level = 1;
     int starX = 560;
     boolean isPaused = false;
+    int shootAnimation = 0;
     
     /**
      * Constructor for objects of class GameWorld.
@@ -54,7 +55,14 @@ public class GameWorld extends World
     
     public void act()
     {
-        
+       if(shootAnimation == 1)
+       {
+           if(Greenfoot.mouseClicked(null))
+           {
+              Sparks spark = new Sparks(50);
+              addObject(spark,Aim.getXPix(),Aim.getYPix()); 
+           }
+       }
     }
     
     /**
@@ -90,9 +98,13 @@ public class GameWorld extends World
                 Chest chest = new Chest();
                 addObject(chest,467,279);
                 
-                Sparks spark = new Sparks();
-                addObject(spark,300,200);
+                shootAnimation++;
                 
+                if(shootAnimation == 1)
+                {
+                    Sparks spark = new Sparks(500);
+                    addObject(spark,300,200);
+                }
             }
         }
     }

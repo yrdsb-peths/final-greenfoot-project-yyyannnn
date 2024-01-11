@@ -36,6 +36,11 @@ public class RedCan extends Actor
         GameWorld world = (GameWorld) getWorld();
         boolean isStopped = world.getPaused();
         
+        if(isStopped)
+        {
+            speed = 50;
+        }
+        
         if(Greenfoot.mouseClicked(this))
         {
             hitSound.play();
@@ -45,8 +50,8 @@ public class RedCan extends Actor
             if(!isStopped)
             {
                 world.createRedcan();
+                world.increaseScore();
             }
-            world.increaseScore();
         }
 
         // Remove oject when it gets to bottom

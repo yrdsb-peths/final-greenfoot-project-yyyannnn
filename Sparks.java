@@ -8,11 +8,12 @@ public class Sparks extends Actor
     //static GreenfootSound starSound = new GreenfootSound("star.mp3");
     GreenfootImage[] sparks = new GreenfootImage[5];
     SimpleTimer animationTimer = new SimpleTimer();
+    int speed;
     
     /**
      * Constructor 
      */
-    public Sparks()
+    public Sparks(int speed)
     {
         for (int i = 0; i < sparks.length; i++)
         {
@@ -20,6 +21,7 @@ public class Sparks extends Actor
             sparks[i].scale(150,150);
         }
         
+        this.speed = speed;
         animationTimer.mark();
         
         // Initial chest
@@ -34,22 +36,28 @@ public class Sparks extends Actor
     int imageIndex = 0;
     public void animateSparks()
     {
-        if(animationTimer.millisElapsed() < 500)
+        if(animationTimer.millisElapsed() < speed)
         {
            return; 
         }
         animationTimer.mark();
         
+        GameWorld world = (GameWorld) getWorld();
         if(imageIndex == 4){
-            setImage(sparks[imageIndex]);
             
-            GameWorld world = (GameWorld) getWorld();
-            world.removeObject(this);
-            
-            Greenfoot.delay(120);
-            
-            world.setPaused(false);
-            world.createRedcan();
+            if(world.getPaused())
+            {
+                setImage(sparks[imageIndex]);
+                
+                world.removeObject(this);
+                
+                Greenfoot.delay(120);
+                
+            }
+            else
+            {
+                world.removeObject(this);
+            }
         }
         else{
             setImage(sparks[imageIndex]);

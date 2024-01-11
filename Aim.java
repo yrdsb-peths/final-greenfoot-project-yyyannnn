@@ -36,6 +36,7 @@ public class Aim extends Actor
         if (Greenfoot.mouseClicked(null))
         {
             whooshSound.play();
+            checkMouse();
             return;
         }
         else
@@ -44,8 +45,7 @@ public class Aim extends Actor
         }
     
     }
-    
- 
+
     
     public void checkMouse(){
         mouse = Greenfoot.getMouseInfo();

@@ -45,6 +45,9 @@ public class Chest extends Actor
             
             GameWorld world = (GameWorld) getWorld();
             world.removeObject(this);
+            
+            world.setPaused(false);
+            world.createRedcan();
         }
         else{
             setImage(chest[imageIndex]);
