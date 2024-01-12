@@ -1,17 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class RedCan here.
+ * The main object for the game 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By Yan
  */
 public class RedCan extends Actor
 {
-    public int speed = 1;
+    //Image and Sound
     GreenfootImage image;
-    boolean isHit = false;
     static GreenfootSound hitSound = new GreenfootSound("ting.wav");
+    
+    //Properties 
+    public int speed = 1;
+    private boolean isHit = false;
     
     /**
      * Contructor
@@ -20,6 +22,7 @@ public class RedCan extends Actor
         image = new GreenfootImage("images/red_can.png");
         image.scale(40,70);
         setImage(image);
+        
         isHit = false;
     }
         
@@ -29,10 +32,12 @@ public class RedCan extends Actor
      */
     public void act()
     {
+        //Set location 
         int x = getX();
         int y = getY() + speed;
         setLocation(x,y);
         
+        //Get a boolean from GameWorld
         GameWorld world = (GameWorld) getWorld();
         boolean isStopped = world.getPaused();
         
@@ -41,20 +46,22 @@ public class RedCan extends Actor
             speed = 50;
         }
         
+        //Check if mouse clicked this object 
         if(Greenfoot.mouseClicked(this))
         {
             hitSound.play();
             speed = 10;
             isHit = true;
             
+            //Will create itself and increases score when not isStopped 
             if(!isStopped)
             {
-                world.createRedcan();
+                world.createRedCan();
                 world.increaseScore();
             }
         }
 
-        // Remove oject when it gets to bottom
+        // Remove object when it gets to bottom
         if(getY() >= world.getHeight())
         {
             if(!isHit && !isStopped)

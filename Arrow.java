@@ -1,15 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Arrow here.
+ * An Arrow that only appears in titleScreen 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @By Yan 
  */
 public class Arrow extends Actor
 {
+    //Image 
     GreenfootImage arrow;
     
+    /**
+     * Constructor for arrow 
+     */
     public Arrow()
     {
          arrow = new GreenfootImage("images/arrow.png");
@@ -26,6 +29,7 @@ public class Arrow extends Actor
         int x = getX() + 3;
         int y = getY();
         
+        //Make the arrow stops when it hit the target 
         if(x >= 396)
         {
            setLocation(getX(),getY()); 

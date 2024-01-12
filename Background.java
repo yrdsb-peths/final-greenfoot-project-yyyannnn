@@ -1,13 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Background here.
+ * The background for the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By Yan 
  */
 public class Background extends Actor
 {
+    /**
+     * Constructor for background 
+     */
     public Background(){
         GreenfootImage image = new GreenfootImage("images/background1.jpg");
         image.scale(600,400);

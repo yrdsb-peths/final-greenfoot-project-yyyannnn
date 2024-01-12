@@ -1,19 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * 
+ * Star 
  */
 public class Star extends Actor
 {
     static GreenfootSound starSound = new GreenfootSound("star.mp3");
+    
+    //Creates the array for animation 
     GreenfootImage[] fillUp = new GreenfootImage[6];
+    
+    //SimpleTimer for animation
     SimpleTimer animationTimer = new SimpleTimer();
     
     /**
-     * Constructor 
+     * Constructor for Star
      */
     public Star()
     {
+        //Loads the imagse 
         for (int i = 0; i < fillUp.length; i++)
         {
             fillUp[i] =  new GreenfootImage("images/Star_fill/star" + i + ".png");
@@ -34,12 +39,15 @@ public class Star extends Actor
     int imageIndex = 0;
     public void animateStar()
     {
+        //Controls how fast the animation goes 
         if(animationTimer.millisElapsed() < 90)
         {
            return; 
         }
+        
         animationTimer.mark();
         
+        //Animate until last image
         if(imageIndex == 5){
             setImage(fillUp[imageIndex]);
         }
@@ -51,7 +59,7 @@ public class Star extends Actor
     }
     
     /**
-     * 
+     * Animates the star 
      */
     public void act()
     {

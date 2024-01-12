@@ -1,10 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bow here.
+ * Bow for decoration in PraticeWorld 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By Yan
  */
 public class Bow extends Actor
 {

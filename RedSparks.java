@@ -1,20 +1,28 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * 
+ * Red Spark
  */
 public class RedSparks extends Actor
 {
-    //static GreenfootSound starSound = new GreenfootSound("star.mp3");
+    //static GreenfootSound sparkSound = new GreenfootSound("star.mp3");
+    
+    //Creates the array for animation 
     GreenfootImage[] sparks = new GreenfootImage[5];
+    
+    //SimpleTimer for animation
     SimpleTimer animationTimer = new SimpleTimer();
+    
+    //Properties
     int speed;
+    int imageIndex = 0;
     
     /**
-     * Constructor 
+     * Constructor for RedSparks
      */
     public RedSparks(int speed)
     {
+        //Loads the images
         for (int i = 0; i < sparks.length; i++)
         {
             sparks[i] =  new GreenfootImage("images/Sparks/spark" + i + ".png");
@@ -24,27 +32,29 @@ public class RedSparks extends Actor
         this.speed = speed;
         animationTimer.mark();
         
-        // Initial chest
+        // Initial spark
         setImage(sparks[0]);
         
-        //starSound.play();
+        //sparkSound.play();
     }
     
     /**
      * Animation for sparks
      */
-    int imageIndex = 0;
     public void animateSparks()
     {
+        //Controls how fast the animation goes 
         if(animationTimer.millisElapsed() < speed)
         {
            return; 
         }
+        
         animationTimer.mark();
         
         GameWorld world = (GameWorld) getWorld();
+        //Will animate every frame until the imageIndex equal 4 
         if(imageIndex == 4){
-            
+            //If world is paused, it will setImage at the last image and remove itself 
             if(world.getPaused())
             {
                 setImage(sparks[imageIndex]);
@@ -52,7 +62,6 @@ public class RedSparks extends Actor
                 world.removeObject(this);
                 
                 Greenfoot.delay(120);
-                
             }
             else
             {

@@ -1,16 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class YellowCircle here.
+ * Yellow ring for target 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By Yan
  */
 public class YellowCircle extends Actor
 {
-    MyWorld world = (MyWorld) getWorld();
+    //Image
     GreenfootImage image;
     
+    /**
+     * Constructor for YellowCircle
+     */
     public YellowCircle(int size)
     {
        image= new GreenfootImage("images/yellow circle.png");
@@ -26,6 +28,9 @@ public class YellowCircle extends Actor
     {
     }
     
+    /**
+     * Sets the scale of the image 
+     */
     public void setScale(int num)
     {
         image.scale(num,num);

@@ -1,15 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BlueCircle here.
+ * Blue ring for target 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By Yan
  */
 public class BlueCircle extends Actor
 {
+    //Image
     GreenfootImage image;
     
+    /**
+     * Constructor for BlueCircle
+     */
     public BlueCircle(int size)
     {
        image = new GreenfootImage("images/blue circle.png");
@@ -26,6 +29,9 @@ public class BlueCircle extends Actor
         // Add your action code here.
     }
     
+    /**
+     * Sets the scale of the image 
+     */
     public void setScale(int num)
     {
         image.scale(num,num);

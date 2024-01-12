@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class TitleScreen extends World
 {
-
+    //Objects 
     Label titleLabel = new Label("Shooting Game",60);
     Arrow arrow = new Arrow();
     
@@ -25,7 +25,6 @@ public class TitleScreen extends World
         addObject(titleLabel, getWidth()/2, 92);
         
         prepare();
-        
     }
     
     /**
@@ -36,7 +35,7 @@ public class TitleScreen extends World
         // Go to practice if user presses the space bar
         if (Greenfoot.isKeyDown("space"))
         {
-            MyWorld practice = new MyWorld();
+            PracticeWorld practice = new PracticeWorld();
             Greenfoot.setWorld(practice);
         }
         
@@ -47,6 +46,7 @@ public class TitleScreen extends World
             Greenfoot.setWorld(gameWorld);
         }
         
+        //Will add an arrow when mouse clicks
         if(Greenfoot.mouseClicked(null))
         {
             addObject(arrow,124,247);
@@ -60,7 +60,6 @@ public class TitleScreen extends World
      */
     private void prepare()
     {
-
         Target target = new Target();
         addObject(target,516,272);
         

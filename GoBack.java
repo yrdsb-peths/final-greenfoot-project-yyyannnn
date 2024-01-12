@@ -1,23 +1,26 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GoBack here.
+ * An Actor that the player can click on to go back to TitleScreen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By Yan 
  */
 public class GoBack extends Actor
 {
+    //Image
     GreenfootImage image;
+    
+    //Properties 
     int world;
     
     /**
-     * Contructor
+     * Contructor for GoBack
      */
     public GoBack(int num){
         image = new GreenfootImage("images/back.png");
         image.scale(40,40);
         setImage(image);
+        
         world = num;
     }
     
@@ -27,11 +30,13 @@ public class GoBack extends Actor
      */
     public void act()
     {
+        //Check for mouse clicks 
         if(Greenfoot.mouseClicked(this))
         {
+            //Calls returnScreen from the world that it is in 
             if(world == 1)
             {
-                MyWorld world = (MyWorld) getWorld();
+                PracticeWorld world = (PracticeWorld) getWorld();
                 world.returnScreen();
             }
             else if(world == 2)

@@ -5,14 +5,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SoundButton extends Actor
 {
+    //Images
     GreenfootImage soundOn = new GreenfootImage("images/soundOn.png");
     GreenfootImage soundOff = new GreenfootImage("images/soundOff.png");
-    boolean isSound = true;
+    
+    //Property 
+    private boolean isSound = true;
     
     /**
      * Contructor
      */
-    public SoundButton(){
+    public SoundButton()
+    {
         soundOn.scale(30,50);
         soundOff.scale(40,55);
         setImage(soundOn);
@@ -29,7 +33,7 @@ public class SoundButton extends Actor
     }
     
     /**
-     * Sets the volume of the sound
+     * Sets the volume of sounds
      */
     public void isSound()
     {

@@ -1,15 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class RedCircle here.
+ * Red ring for target 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By Yan
  */
 public class RedCircle extends Actor
 {
+    //Image
     GreenfootImage image;
     
+    /**
+     * Constructor for RedCircle
+     */
     public RedCircle(int size)
     {
        image = new GreenfootImage("images/red circle.png");
@@ -26,6 +29,9 @@ public class RedCircle extends Actor
         // Add your action code here.
     }
     
+    /**
+     * Sets the scale of the image 
+     */
     public void setScale(int num)
     {
         image.scale(num,num);

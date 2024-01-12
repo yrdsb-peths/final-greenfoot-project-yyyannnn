@@ -1,15 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class WhiteCircle here.
+ * White ring for target 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By Yan
  */
 public class WhiteCircle extends Actor
 {
+    //Image
     GreenfootImage image;
     
+    /**
+     * Constructor for WhiteCircle
+     */
     public WhiteCircle(int size)
     {
        image = new GreenfootImage("images/white circle.png");
@@ -26,6 +29,9 @@ public class WhiteCircle extends Actor
         // Add your action code here.
     }
     
+    /**
+     * Sets the scale of the image 
+     */
     public void setScale(int num)
     {
         image.scale(num,num);

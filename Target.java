@@ -1,18 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Target here.
+ * Target
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By Yan
  */
 public class Target extends Actor
 {
-    GreenfootImage image;
-    
+    /**
+     * Constructor for Target
+     */
     public Target()
     {
-       image = new GreenfootImage("images/target.png");
+       GreenfootImage image = new GreenfootImage("images/target.png");
        image.scale(300,300);
        setImage(image); 
     }

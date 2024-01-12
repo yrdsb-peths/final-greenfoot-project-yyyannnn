@@ -5,7 +5,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameOver extends World
 {
-   
     /**
      * Constructor for objects of class GameOver world.
      * 
@@ -29,7 +28,7 @@ public class GameOver extends World
     }
 
     /**
-     * If the user presses the space bar, it will return back to home screen 
+     *
      */
     public void act()
     {

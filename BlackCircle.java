@@ -1,15 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BlackCircl here.
+ * Black ring for target 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By Yan
  */
 public class BlackCircle extends Actor
 {
+    //Image
     GreenfootImage image;
     
+    /**
+     * Constructor for BlackCircle
+     */
     public BlackCircle(int size)
     {
        image = new GreenfootImage("images/black circle.png");
@@ -26,6 +29,9 @@ public class BlackCircle extends Actor
         // Add your action code here.
     }
     
+    /**
+     * Sets the scale of the image 
+     */
     public void setScale(int num)
     {
         image.scale(num,num);

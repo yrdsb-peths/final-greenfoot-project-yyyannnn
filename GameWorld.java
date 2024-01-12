@@ -1,21 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GameWorld here.
+ * This is the GameWorld.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By: Yan
  */
 public class GameWorld extends World
 {
+    //Objects      
     Aim aim;
-    public int score = 0;
     Label scoreLabel;
     Label levelLabel;
-    int level = 1;
-    int starX = 560;
-    boolean isPaused = false;
-    int shootAnimation = 0;
+    
+    //Properties  
+    public int score = 0;
+    public int level = 1;
+    private int starX = 560;
+    public boolean isPaused = false;
+    public int shootAnimation = 0;
     
     /**
      * Constructor for objects of class GameWorld.
@@ -39,24 +41,30 @@ public class GameWorld extends World
         aim = new Aim(true);
         addObject(aim,getWidth()/2,210);
         
-        // Create a labal
+        GoBack back = new GoBack(2);
+        addObject(back,31,371);
+        
+        // Create a labels
         scoreLabel = new Label("Score: " + score,50);
         addObject(scoreLabel,90,38);
         
         levelLabel = new Label("Level: " + level,50);
         addObject(levelLabel,90,77);
         
-        GoBack back = new GoBack(2);
-        addObject(back,31,371);
-        
-        createRedcan();
+        //Create Objects to start game 
+        createRedCan();
         createSound();
     }
     
+    /**
+     * Method that the World will always check 
+     */
     public void act()
     {
+       //Check for mouse clicks 
        if(Greenfoot.mouseClicked(null))
        {
+           //Depends on the shootAnimation, it will create different sparks wherever the mouse clicks 
            if(shootAnimation == 1)
            {
               RedSparks spark = new RedSparks(50);
@@ -69,11 +77,10 @@ public class GameWorld extends World
            }
        }
        
-       
     }
     
     /**
-     * Go to game over world
+     * Go to GameOver world
      */    
     public void gameOver()
     {
@@ -89,15 +96,18 @@ public class GameWorld extends World
         score++;
         scoreLabel.setValue("Score: " + score);
         
+        //Everytime score increase by 5, level increases 
         if (score % 5 == 0)
         {
             level++;
             levelLabel.setValue("Level: " + level);
             
+            //Creates a star everytime level increases
             starX -= 50;
             Star star = new Star();
             addObject(star,starX,30);
-        
+            
+            //Everytime score increase by 15, there's a chest for the player 
             if(score % 15 == 0)
             {
                 isPaused = true;
@@ -107,6 +117,7 @@ public class GameWorld extends World
                 
                 shootAnimation++;
                 
+                //Depends on the shootAnimation, it will create different sparks
                 if(shootAnimation == 1)
                 {
                     RedSparks spark = new RedSparks(500);
@@ -124,7 +135,7 @@ public class GameWorld extends World
     /**
      * Create can anywhere at the top of the screen
      */
-    public void createRedcan(){
+    public void createRedCan(){
         if(isPaused)
         {
             return;
@@ -137,11 +148,17 @@ public class GameWorld extends World
         addObject(redCan,x,y);
     }
     
+    /**
+     * Setter for isPaused 
+     */    
     public void setPaused(boolean bool)
     {
         isPaused = bool;
     }
     
+    /**
+     * Getter for isPaused 
+     */
     public boolean getPaused(){
         return isPaused;
     }

@@ -1,29 +1,30 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Aim here.
+ * Aim is an object that follows wherever the mouse goes 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * By Yan 
  */
 public class Aim extends Actor
 {
-    // MyWorld world = (MyWorld) getWorld();
-    private GreenfootImage image;
+    //Properties 
     private MouseInfo mouse;
     public static int x;
     public static int y;
     public int bodyMovement = 5;
-    private boolean isGame;
     
+    //image and sound 
+    private GreenfootImage image;
     static GreenfootSound whooshSound = new GreenfootSound("whoosh.mp3");
     
+    /**
+     * Constructor for Aim 
+     */
     public Aim(boolean game)
     {
        image = new GreenfootImage("images/aim.png");
        image.scale(5,5);
        setImage(image); 
-       isGame = game;
     }
     
     /**
@@ -32,18 +33,14 @@ public class Aim extends Actor
      */
     public void act()
     {
-   
+        //Check if mouse is clicked 
         if (Greenfoot.mouseClicked(null))
         {
             whooshSound.play();
-            checkMouse();
-            return;
         }
-        else
-        {
-           checkMouse();
-        }
-    
+        
+        //Checks the mouse 
+        checkMouse();
     }
 
     
@@ -59,11 +56,17 @@ public class Aim extends Actor
         
     }
     
+    /**
+     * Getter for variable x
+     */
     public static int getXPix()
     {
         return x;
     }
     
+    /**
+     * Getter for variable x
+     */
     public static int getYPix()
     {
         return y;
