@@ -15,11 +15,11 @@ public class PracticeWorld extends World
     YellowCircle yellowCircle;
     Aim aim;
     Label scoreLabel;
+    Label shotsLabel;
     
     //Properties 
-    public int windVer = Greenfoot.getRandomNumber(10);
-    public int windHor = Greenfoot.getRandomNumber(10);
     public int score = 0;
+    public int shots = 0;
     
     
     /**
@@ -43,8 +43,11 @@ public class PracticeWorld extends World
         scoreLabel = new Label("Score: " + score, 50);
         addObject(scoreLabel,100,100);
         
-        Bow bow = new Bow();
-        addObject(bow,386,186);
+        shotsLabel = new Label("Shots: " + shots, 50);
+        addObject(shotsLabel,100,61);
+        
+        // Bow bow = new Bow();
+        // addObject(bow,386,186);
         
         SoundButton soundButton = new SoundButton();
         addObject(soundButton,570,35);
@@ -66,18 +69,19 @@ public class PracticeWorld extends World
         
         //Create black spots when mouse clicks 
         if(Greenfoot.mouseClicked(null) && mouse != null)
-        {
-            BlackCircle spot = new BlackCircle(2);
-            addObject(spot,mouse.getX(),mouse.getY());
+        {            
+            // BlackCircle spot = new BlackCircle(2);
+            // addObject(spot,mouse.getX(),mouse.getY());
+            
+            addShots();
         }
-
     }
     
     /**
      * Will add score when clicked on circles
      */
     public void checkArrow()
-    {
+    {        
         if(Greenfoot.mouseClicked(yellowCircle)){
             addScore(40);
         }
@@ -108,7 +112,15 @@ public class PracticeWorld extends World
         scoreLabel.setValue("Score: " + score);
     }
     
-    
+    /**
+     * Method to add number of shots and change shotsLabel
+     */
+    public void addShots()
+    {
+        shots++;
+        shotsLabel.setValue("Shots: " + shots);
+    }
+      
     /**
      * Creates the target
      */
@@ -116,7 +128,7 @@ public class PracticeWorld extends World
     {
         int x = getWidth()/2;
         int y = 210;
-        
+
         whiteCircle = new WhiteCircle(50);
         addObject(whiteCircle,x,y);
         
@@ -131,6 +143,7 @@ public class PracticeWorld extends World
         
         yellowCircle = new YellowCircle(10);
         addObject(yellowCircle,x,y);
+        
     }
     
     /**
