@@ -10,14 +10,24 @@ public class BlackCircle extends Actor
     //Image
     GreenfootImage image;
     
+    //Properties
+    boolean ifRemove;
+    SimpleTimer timer = new SimpleTimer();
+    
     /**
      * Constructor for BlackCircle
      */
-    public BlackCircle(int size)
+    public BlackCircle(int size, boolean remove)
     {
        image = new GreenfootImage("images/black circle.png");
        image.scale(size,size);
-       setImage(image); 
+       setImage(image);  
+       ifRemove = remove;
+       
+       if(ifRemove)
+       {
+           timer.mark();
+       }
     }
     
     /**
@@ -26,6 +36,15 @@ public class BlackCircle extends Actor
      */
     public void act()
     {
+        if(ifRemove)
+        {
+            if(timer.millisElapsed() > 3000)
+            {
+               PracticeWorld world = (PracticeWorld) getWorld();
+               world.removeObject(this);
+               timer.mark();
+            }
+        }
     }
     
     /**

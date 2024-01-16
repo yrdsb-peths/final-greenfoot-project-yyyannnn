@@ -21,7 +21,6 @@ public class PracticeWorld extends World
     public int score = 0;
     public int shots = 0;
     
-    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -70,8 +69,8 @@ public class PracticeWorld extends World
         //Create black spots when mouse clicks 
         if(Greenfoot.mouseClicked(null) && mouse != null)
         {            
-            // BlackCircle spot = new BlackCircle(2);
-            // addObject(spot,mouse.getX(),mouse.getY());
+            BlackCircle spot = new BlackCircle(2,true);
+            addObject(spot,mouse.getX(),mouse.getY());
             
             addShots();
         }
@@ -132,7 +131,7 @@ public class PracticeWorld extends World
         whiteCircle = new WhiteCircle(50);
         addObject(whiteCircle,x,y);
         
-        blackCircle = new BlackCircle(40);
+        blackCircle = new BlackCircle(40, false);
         addObject(blackCircle,x,y);
         
         blueCircle = new BlueCircle(30);
