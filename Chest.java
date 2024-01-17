@@ -5,7 +5,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Chest extends Actor
 {
-    //static GreenfootSound chestSound = new GreenfootSound("star.mp3");
     
     //Creates the array for animation 
     GreenfootImage[] chest = new GreenfootImage[9];
@@ -32,8 +31,6 @@ public class Chest extends Actor
         
         // Initial chest
         setImage(chest[0]);
-        
-        //chestSound.play();
     }
     
     /**
@@ -75,12 +72,4 @@ public class Chest extends Actor
     {
         animateChest();
     }
-    
-    
-    // /**
-     // * A static method that will set the volume of sound
-     // */
-    // public static void setVolume(int volume){
-        // chestSound.setVolume(volume);
-    // }
 }

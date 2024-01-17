@@ -20,7 +20,8 @@ public class PracticeWorld extends World
     //Properties 
     public int score = 0;
     public int shots = 0;
-    
+    public int move = 0;
+    private boolean isRight = true;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -34,6 +35,9 @@ public class PracticeWorld extends World
         Background background = new Background();
         addObject(background,300,200);
         
+        Bow bow = new Bow();
+        addObject(bow,386,186);
+        
         //Create objects 
         createTarget();
         
@@ -45,10 +49,7 @@ public class PracticeWorld extends World
         
         shotsLabel = new Label("Shots: " + shots, 50);
         addObject(shotsLabel,100,61);
-        
-        // Bow bow = new Bow();
-        // addObject(bow,386,186);
-        
+    
         SoundButton soundButton = new SoundButton();
         addObject(soundButton,570,35);
         
@@ -70,11 +71,47 @@ public class PracticeWorld extends World
         //Create black spots when mouse clicks 
         if(Greenfoot.mouseClicked(null) && mouse != null)
         {            
-            // BlackCircle spot = new BlackCircle(2);
-            // addObject(spot,mouse.getX(),mouse.getY());
+            BlackCircle spot = new BlackCircle(2,true);
+            addObject(spot,mouse.getX(),mouse.getY());
             
             addShots();
         }
+        
+        moveTarget();      
+    }
+
+    /**
+     * Move the target
+     */
+    public void moveTarget()
+    {        
+        int y = 210;
+        int x;
+        
+        if(isRight)
+        {
+            x = yellowCircle.getX() + move;
+            
+            if(yellowCircle.getX() >= 599)
+            {
+                isRight = false;
+            }
+        }
+        else
+        {
+            x = yellowCircle.getX() - move;
+            
+            if(yellowCircle.getX() <= 1)
+            {
+                isRight = true;
+            }
+        }
+        
+        yellowCircle.setLocation(x,y);
+        whiteCircle.setLocation(x,y);
+        blackCircle.setLocation(x,y);
+        blueCircle.setLocation(x,y);
+        redCircle.setLocation(x,y);
     }
     
     /**
@@ -119,6 +156,11 @@ public class PracticeWorld extends World
     {
         shots++;
         shotsLabel.setValue("Shots: " + shots);
+        
+        if(shots % 10 == 0)
+        {
+            move++;
+        }
     }
       
     /**
@@ -132,7 +174,7 @@ public class PracticeWorld extends World
         whiteCircle = new WhiteCircle(50);
         addObject(whiteCircle,x,y);
         
-        blackCircle = new BlackCircle(40);
+        blackCircle = new BlackCircle(40, false);
         addObject(blackCircle,x,y);
         
         blueCircle = new BlueCircle(30);
