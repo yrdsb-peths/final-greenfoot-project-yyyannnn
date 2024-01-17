@@ -9,6 +9,7 @@ Press space or start key to start.
 
 ## Pratice 
 * Click on the target to score points
+* The target will move and move faster as the player shoots more arrows
 
 ## Game
 * Click on the pop cans to gain score.
