@@ -76,7 +76,6 @@ public class GameWorld extends World
                addObject(spark,300,200);
            }
        }
-       
     }
     
     /**
@@ -140,7 +139,6 @@ public class GameWorld extends World
         {
             return;
         }
-        
         RedCan redCan = new RedCan();
         redCan.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);

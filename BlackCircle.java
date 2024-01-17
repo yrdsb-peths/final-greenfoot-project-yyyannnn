@@ -45,6 +45,7 @@ public class BlackCircle extends Actor
                timer.mark();
             }
         }
+
     }
     
     /**

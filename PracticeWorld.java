@@ -122,20 +122,16 @@ public class PracticeWorld extends World
         if(Greenfoot.mouseClicked(yellowCircle)){
             addScore(40);
         }
-        
-        if(Greenfoot.mouseClicked(redCircle)){
+        else if(Greenfoot.mouseClicked(redCircle)){
             addScore(30);
         }
-        
-        if(Greenfoot.mouseClicked(blueCircle)){
+        else if(Greenfoot.mouseClicked(blueCircle)){
             addScore(20);
         }
-        
-        if(Greenfoot.mouseClicked(blackCircle)){
+        else if(Greenfoot.mouseClicked(blackCircle)){
             addScore(10);
         }
-        
-        if(Greenfoot.mouseClicked(whiteCircle)){
+        else if(Greenfoot.mouseClicked(whiteCircle)){
             addScore(5);
         }
     }
