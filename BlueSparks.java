@@ -6,9 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * By Yan 
  */
 public class BlueSparks extends Actor
-{
-    //static GreenfootSound sparkSound = new GreenfootSound("star.mp3");
-    
+{    
     //Creates the array for animation 
     GreenfootImage[] sparks = new GreenfootImage[9];
     
@@ -36,8 +34,6 @@ public class BlueSparks extends Actor
         
         // Initial spark
         setImage(sparks[0]);
-        
-        //sparkSound.play();
     }
     
     /**
@@ -85,12 +81,5 @@ public class BlueSparks extends Actor
     {
         animateSparks();
     }
-    
-    
-    // /**
-     // * A static method that will set the volume of sound
-     // */
-    // public static void setVolume(int volume){
-        // sparkSound.setVolume(volume);
-    // }
+
 }
